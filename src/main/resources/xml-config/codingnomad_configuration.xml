@@ -18,5 +18,9 @@
         <property name="name" value="OpenJDK"/>
         <property name="version" value="17"/>
     </bean>
+    <bean id="application" class="com.codingnomads.corespring.examples.application_context.xml.Application">
+        <property name="name" value="OpenGl" />
+        <property name="version" value="3.0.1" />
+    </bean>
 
 </beans>
