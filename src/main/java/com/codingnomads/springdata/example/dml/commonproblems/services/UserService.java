@@ -7,6 +7,7 @@ import com.codingnomads.springdata.example.dml.commonproblems.models.User;
 import com.codingnomads.springdata.example.dml.commonproblems.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
@@ -14,6 +15,7 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
+    @Transactional
     public void persistAFewUsers() {
 
         // set up an Address
@@ -74,13 +76,13 @@ public class UserService {
         System.out.println(userRepo.findByUsername("George Bluth").toString());
 
         // find users by address
-        userRepo.findByAddress_id(1L).forEach(System.out::println);
+//        userRepo.findByAddress_id(1L).forEach(System.out::println);
 
         // find user by ID
-        System.out.println(userRepo.findById(4L).toString());
+//        System.out.println(userRepo.findById(4L).toString());
 
         // find all users
-        userRepo.findAll().forEach(System.out::println);
+//        userRepo.findAll().forEach(System.out::println);
     }
 
     public void idError() {

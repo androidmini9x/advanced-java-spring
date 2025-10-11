@@ -19,5 +19,5 @@ public class Driver {
     private String name;
 
     @OneToOne
-    private Car car;
+    private Car card;
 }

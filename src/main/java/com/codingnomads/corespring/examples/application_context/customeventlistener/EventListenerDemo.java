@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class EventListenerDemo implements CommandLineRunner {
 
     private final UserRegistrationCompletedEventPublisher userRegistrationCompletedEventPublisher;
+    private final UserSignInEventPublisher userSignInEventPublisher;
 
     public static void main(String[] args) {
         SpringApplication.run(EventListenerDemo.class, args);
@@ -20,5 +21,6 @@ public class EventListenerDemo implements CommandLineRunner {
     @Override
     public void run(String... args) {
         userRegistrationCompletedEventPublisher.publishEventAndSendEmail("nomad@codingnomads.com");
+        userSignInEventPublisher.publishMessage("User 1 logged In!");
     }
 }
